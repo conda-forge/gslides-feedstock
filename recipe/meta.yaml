@@ -1,5 +1,5 @@
 {% set name = "gslides" %}
-{% set version = "0.1.0" %}
+{% set version = "0.1.1" %}
 
 
 package:
@@ -8,20 +8,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/gslides-{{ version }}.tar.gz
-  sha256: 9d469e9bddaec14602aea35f97571db68d344615681ffb337cec20638b90db7f
+  sha256: 5447d964d9a324898284a6c9cb042adb819609654e6e1fb638586194f54878a6
 
 build:
   number: 0
   noarch: python
   script:
-    # TODO: remove when issue gets fixed
-    # - removing "tests/" folder from gslides downloaded tar.gz
-    # - the following line (rm -rf tests/) will not be necessary 
-    #   once the issue michael-gracie/gslides#47 has been closed.
-    #
-    # - https://github.com/michael-gracie/gslides/issues/47
-    - echo -e "\n>>>  REMOVING tests/ folder from gslides...  <<<\n"
-    - rm -rf tests/ 
     - {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -72,3 +64,4 @@ about:
 extra:
   recipe-maintainers:
     - sugatoray
+    - michael-gracie
