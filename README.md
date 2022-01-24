@@ -22,6 +22,8 @@ control over the creation of new visualizations through
 configurable parameters while eliminating the complexity of
 working directly with the Google API.
 
+PyPI: [https://pypi.org/project/gslides/](https://pypi.org/project/gslides/)
+
 
 Current build status
 ====================
@@ -130,5 +132,6 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@michael-gracie](https://github.com/michael-gracie/)
 * [@sugatoray](https://github.com/sugatoray/)
 
