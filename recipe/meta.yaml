@@ -11,18 +11,9 @@ source:
   sha256: 920fe9c3e74c07c48ad7d6862964961f408ed12ec8f893c23bc7f3a49cd65280
 
 build:
-  number: 0
+  number: 1
   noarch: python
-  script:
-    # TODO: remove when issue gets fixed
-    # - removing "tests/" folder from gslides downloaded tar.gz
-    # - the following line (rm -rf tests/) will not be necessary 
-    #   once the issue michael-gracie/gslides#47 has been closed.
-    #
-    # - https://github.com/michael-gracie/gslides/issues/47
-    - echo -e "\n>>>  REMOVING tests/ folder from gslides...  <<<\n"
-    - rm -rf tests/
-    - {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -65,10 +56,15 @@ about:
     The package provides a set of classes that enable the user full 
     control over the creation of new visualizations through 
     configurable parameters while eliminating the complexity of 
-    working directly with the Google API.   
+    working directly with the Google API.
+    
+    PyPI: [https://pypi.org/project/gslides/](https://pypi.org/project/gslides/)
+    
   doc_url: https://michael-gracie.github.io/gslides/
   dev_url: https://github.com/michael-gracie/gslides
 
 extra:
   recipe-maintainers:
     - sugatoray
+    # Maintainer(s) from Package Repo
+    - michael-gracie
